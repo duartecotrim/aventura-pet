@@ -1,0 +1,50 @@
+{
+  "name": "aventura-pet-tcc",
+  "version": "1.0.0",
+  "description": "TCC DO CURSO TECNICO DE INFORMATICA PARA WEB TURMA: MIIAN-2025",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciusdnb/aventuraPet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "contributors": [
+    {
+      "name": "vinicius henrique",
+      "email": "viniciusdnb@hotmail.com",
+      "url": "https://github.com/viniciusdnb"
+    },
+    {
+      "name": "Vinicius Duarte",
+      "url": "https://github.com/duartecotrim"
+    },
+    {
+      "name": "Daniel Santos",
+      "url": "https://github.com/Daniel-sgv"
+    },
+    {
+      "name": "guilherme silva",
+      "url": "https://github.com/dev-guisilva"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/viniciusdnb/aventuraPet/issues"
+  },
+  "homepage": "https://github.com/viniciusdnb/aventuraPet#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "express-validator": "^7.2.1",
+    "mysql2": "^3.14.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.37.7"
+  }
+}
