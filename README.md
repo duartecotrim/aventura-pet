@@ -13,9 +13,9 @@ criação de site para doação e adoção de animais de estimação.
 tecnologia utilizada
 
 ### COLABORADORES
-- VINICUS HENRIQUE
+- VINICIUS HENRIQUE
 - VINICIUS DUARTE
-- GULHEME SILVA
+- GUILHERME SILVA
 - DANIEL SANTOS
 - FLORISVALDO
 
