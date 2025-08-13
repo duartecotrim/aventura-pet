@@ -4,7 +4,7 @@ USE db_aventura_pet;
 
 CREATE TABLE usuario (
     id_usuario INT PRIMARY KEY AUTO_INCREMENT,
-    nome_usuario VARCHAR(100),
+    nome_usuario VARCHAR(100)
 );
 
 CREATE TABLE contato_usuario(
@@ -12,8 +12,8 @@ CREATE TABLE contato_usuario(
     id_usuario INT,
     telefone VARCHAR(20),
     endereco VARCHAR(250),
-    email VARCHAR(100)
-    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+    email VARCHAR(100),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 );
 
 CREATE TABLE password_hash(
@@ -23,7 +23,7 @@ CREATE TABLE password_hash(
     ativo BOOLEAN,
     data_criacao DATE,
     data_inaticacao DATE,
-    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 );
 
 CREATE TABLE especie (
@@ -49,7 +49,7 @@ CREATE TABLE cor(
 );
 
 CREATE TABLE cuidado_veterinario(
-    id_cuidado_veterinario INT PRIMARY AUTO_INCREMENT,
+    id_cuidado_veterinario INT PRIMARY KEY AUTO_INCREMENT,
     descricao_cuidado_veterinario VARCHAR(50)
 );
 
@@ -76,7 +76,7 @@ CREATE TABLE pet(
 );
 
 CREATE TABLE documento_pet(
-    id_documento_pet INT PRIMARY KEY AUTO_INCREMENT
+    id_documento_pet INT PRIMARY KEY AUTO_INCREMENT,
     id_pet INT,
     descricao_documento_pet VARCHAR(50),
     documento_pet VARCHAR(50),
@@ -86,11 +86,11 @@ CREATE TABLE documento_pet(
 
 
 CREATE TABLE caracterstica_pet(
-    id_caracteristica_pet INT PRIMARY KEY AUTO_INCREMENT
+    id_caracteristica_pet INT PRIMARY KEY AUTO_INCREMENT,
     id_pet INT,
     id_sociabilidade INT,
     id_adaptalidade INT,
-    id_temperamento INT
+    id_temperamento INT,
     id_cuidado_veterinario INT,
     cor_olhos_id_cor INT,
     cor_pelagem_id_cor INT,
@@ -101,13 +101,13 @@ CREATE TABLE caracterstica_pet(
     FOREIGN KEY (id_pet) REFERENCES pet(id_pet),
     FOREIGN KEY (id_sociabilidade) REFERENCES sociabilidade(id_sociabilidade),
     FOREIGN KEY (id_adaptalidade) REFERENCES adaptalidade(id_adaptalidade),
-    FOREIGN KEY (id_temperament) REFERENCES temperamento(id_temperament)T
+    FOREIGN KEY (id_temperamento) REFERENCES temperamento(id_temperamento),
     FOREIGN KEY (id_cuidado_veterinario) REFERENCES cuidado_veterinario(id_cuidado_veterinario),
     FOREIGN KEY (cor_olhos_id_cor) REFERENCES cor(id_cor),
     FOREIGN KEY (cor_pelagem_id_cor) REFERENCES cor(id_cor),
     FOREIGN KEY (id_porte) REFERENCES porte(id_porte),
     FOREIGN KEY (id_raca) REFERENCES raca(id_raca),
-    FOREIGN KEY (id_especie) REFERENCES especie(id_especie),
+    FOREIGN KEY (id_especie) REFERENCES especie(id_especie)
 
 );
 
