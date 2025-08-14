@@ -1,0 +1,10 @@
+preciso de que cada item abaixo seja cirado um codigo de router no node js utilizando o modulo express,
+contatoUsuario, caracteristicaPet, contatoUsuario, contatoUsuario, cor, cuidadoVeterinario, documentoPet, 
+especie, imagemPet, passwordHash, petCurtido, pet, petVizualizado, porte, raca, sociabilidade, temperamento,
+usuario.
+todos os itens teram no final do nome do arquivo Router.
+o nome da constante do modulo ter Router no final.
+cada um deles tera um constante de controler com o mesmo nome e no final é adicional controller,
+todas as rotas terao as seguintes funcoes de crud com o seu nome de rota igual aos nomes acima, as funcao de edit e delete receberara id no parametro da rota
+cada funcao de rota recebera seu controler com sua funcao de acordo com o crud e elas receberam as variavel req e res 
+
