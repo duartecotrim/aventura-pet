@@ -1,6 +1,5 @@
-const connect = require('../../model/connect');
-const {DataTypes} = require('sequelize');
-
+const connect = require('../connect');
+const { DataTypes } = require('sequelize');
 const passwordHashModel = connect.define(
     'password_hash',
     {
@@ -10,19 +9,24 @@ const passwordHashModel = connect.define(
             autoIncrement:true
         },
         id_usuario:{
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         password_hash:{
-            type: DataTypes.CHAR
+            type: DataTypes.STRING(300),
+            allowNull: false
         },
         ativo:{
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         data_criacao:{
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
+            allowNull: false
         },
         data_inaticacao:{
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
+            allowNull: false
         }
     },
         {
@@ -30,5 +34,8 @@ const passwordHashModel = connect.define(
         freezeTableName:true
     }
 );
+
+const usuarioModel = require('./usuarioModel');
+passwordHashModel.belongsTo(usuarioModel,{primaryKey:id_usuario, targetKey: id_usuario});
 
 module.exports = passwordHashModel;

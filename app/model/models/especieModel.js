@@ -1,6 +1,5 @@
-const connect = require('../../model/connect');
+const connect = require('../connect');
 const { DataTypes } = require('sequelize');
-
 const especieModel = connect.define(
     'especie',
     {
@@ -10,7 +9,8 @@ const especieModel = connect.define(
             autoIncrement: true
         },
         nome_especie: {
-            type: DataTypes.CHAR
+            type: DataTypes.STRING(50),
+            allowNull: false
         }
     },
     {

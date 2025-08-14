@@ -1,5 +1,5 @@
-const connect = require('../../model/connect');
-const {DataTypes} = require('sequelize');
+const connect = require('../connect');
+const { DataTypes } = require('sequelize');
 
 const usuarioModel = connect.define(
     'usuario',
@@ -10,7 +10,8 @@ const usuarioModel = connect.define(
             autoIncrement: true
         },
         nome_usuario:{
-            type: DataTypes.CHAR
+            type: DataTypes.STRING(100),
+            allowNull: false
         }
     },
     {
@@ -18,5 +19,6 @@ const usuarioModel = connect.define(
         freezeTableName: true
     }
 );
+
 
 module.exports = usuarioModel;

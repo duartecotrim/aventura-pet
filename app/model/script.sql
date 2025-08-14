@@ -11,7 +11,7 @@ CREATE TABLE contato_usuario(
     id_contato_usuario INT PRIMARY KEY AUTO_INCREMENT,
     id_usuario INT,
     telefone VARCHAR(20),
-    endereco VARCHAR(250),
+    cep VARCHAR(7),
     email VARCHAR(100),
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 );
@@ -64,7 +64,7 @@ CREATE TABLE adaptalidade(
 );
 
 CREATE TABLE sociabilidade(
-     id_sociabilidade INT PRIMARY KEY AUTO_INCREMENT,
+    id_sociabilidade INT PRIMARY KEY AUTO_INCREMENT,
     descricao_sociabilidade VARCHAR(50)
 );
 
@@ -72,7 +72,8 @@ CREATE TABLE sociabilidade(
 CREATE TABLE pet(
     id_pet INT PRIMARY KEY AUTO_INCREMENT,
     id_usuario INT,
-    nome_pet VARCHAR(50)    
+    nome_pet VARCHAR(50),   
+    adotado BOOLEAN 
 );
 
 CREATE TABLE documento_pet(
@@ -118,3 +119,11 @@ CREATE TABLE imagem_pet(
     imagem LONGBLOB,
     FOREIGN KEY (id_pet) REFERENCES pet(id_pet)
 );
+
+CREATE TABLE pet_visualizado(
+    id_pet_visualizado INT PRIMARY KEY AUTO_INCREMENT,
+    id_pet INT,
+    id_usuario INT,
+    FOREIGN KEY (id_pet) REFERENCES pet(id_pet)
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+)

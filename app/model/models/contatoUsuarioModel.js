@@ -1,6 +1,5 @@
-const connect = require('../../model/connect');
-const {DataTypes} = require('sequelize');
-
+const connect = require('../connect');
+const { DataTypes } = require('sequelize');
 const contatoUsuarioModel = connect.define(
     'contato_usuario',
     {
@@ -10,16 +9,20 @@ const contatoUsuarioModel = connect.define(
             autoIncrement: true
         },
         id_usuario:{
-            type:DataTypes.INTEGER
+            type:DataTypes.INTEGER,
+            allowNull: false
         },
         telefone:{
-            type:DataTypes.CHAR
+            type:DataTypes.STRING(20),
+            allowNull: false
         },
-        endereco:{
-            type:DataTypes.CHAR
+        cep:{
+            type:DataTypes.STRING(7),
+            allowNull: false
         },
         email:{
-            type:DataTypes.CHAR
+            type:DataTypes.STRING(100),
+            allowNull: false
         }
     },
     {
@@ -27,5 +30,8 @@ const contatoUsuarioModel = connect.define(
         freezeTableName:true
     }
 );
+
+const usuarioModel = require('./usuarioModel');
+contatoUsuarioModel.belongsTo(usuarioModel, {foreignKey:id_usuario, targetKey: id_usuario});
 
 module.exports = contatoUsuarioModel;
