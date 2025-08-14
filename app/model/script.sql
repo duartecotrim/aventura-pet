@@ -68,7 +68,8 @@ CREATE TABLE sociabilidade(
     descricao_sociabilidade VARCHAR(50)
 );
 
-
+-- usuario 1 tem n pets
+-- pet 1 tem 1 usuario
 CREATE TABLE pet(
     id_pet INT PRIMARY KEY AUTO_INCREMENT,
     id_usuario INT,
@@ -76,6 +77,8 @@ CREATE TABLE pet(
     adotado BOOLEAN 
 );
 
+-- pet 1 tem n documentos
+-- documento 1 de 1 pet
 CREATE TABLE documento_pet(
     id_documento_pet INT PRIMARY KEY AUTO_INCREMENT,
     id_pet INT,
@@ -85,7 +88,7 @@ CREATE TABLE documento_pet(
 );
 
 
-
+-- tablea que reccebe o pet e suas caracteristicas 1:1
 CREATE TABLE caracterstica_pet(
     id_caracteristica_pet INT PRIMARY KEY AUTO_INCREMENT,
     id_pet INT,
@@ -112,7 +115,8 @@ CREATE TABLE caracterstica_pet(
 
 );
 
-
+-- pet 1 tem n imagen
+-- iemgem 1 tem 1 pet
 CREATE TABLE imagem_pet(
     id_imagem_pet INT PRIMARY key AUTO_INCREMENT,
     id_pet INT,
@@ -120,10 +124,22 @@ CREATE TABLE imagem_pet(
     FOREIGN KEY (id_pet) REFERENCES pet(id_pet)
 );
 
+-- usuario 1 vizualiza n pet_visualizado
+-- pet_visualizado 1 visto por n usuarios
 CREATE TABLE pet_visualizado(
     id_pet_visualizado INT PRIMARY KEY AUTO_INCREMENT,
     id_pet INT,
     id_usuario INT,
     FOREIGN KEY (id_pet) REFERENCES pet(id_pet)
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
-)
+);
+
+-- usuario 1 curte n pets
+-- pet 1 curtido n usuarios
+CREATE TABLE pet_curtido(
+    id_pet_curtido INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT,
+    id_pet INT,
+    FOREIGN KEY (id_usuario)REFERENCES usuario(id_usuario),
+    FOREIGN KEY (id_pet)REFERENCES pet(id_pet)
+);
