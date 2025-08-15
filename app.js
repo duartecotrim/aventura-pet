@@ -22,6 +22,8 @@ const racaRouter = require('./app/router/adm/racaRouter');
 const sociabilidadeRouter = require('./app/router/adm/sociabilidadeRouter');
 const temperamentoRouter = require('./app/router/adm/temperamentoRouter');
 const usuarioRouter = require('./app/router/public/usuarioRouter');
+const loginRouter = require('./app/router/loginRouter');
+const novaContaRouter = require('./app/router/novaContaRouter');
 
 app.use(express.static('./app/public'));
 app.use(express.json());
@@ -30,6 +32,8 @@ app.use(express.urlencoded({extended:true}));
 app.set('views', './app/views');
 app.set('view engine', 'ejs');
 
+app.use('/', novaContaRouter);
+app.use('/', loginRouter);
 app.use('/', homeRouter);
 app.use('/', adaptabilidadeRouter);
 app.use('/', corRouter);
