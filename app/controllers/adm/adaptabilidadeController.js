@@ -1,12 +1,13 @@
 const adaptabilidadeController = {
   create: (req, res) => {
     // lógica para criar adaptabilidade
-    res.send('adaptabilidade criado com sucesso');
+    //res.send('adaptabilidade criado com sucesso');
+    res.render('adm/adaptabilidade/index');
   },
 
   read: (req, res) => {
     // lógica para listar adaptabilidade
-    res.send('Lista de adaptabilidade');
+    res.render('adm/adaptabilidade/index', {fileName: "main"});
   },
 
   edit: (req, res) => {
