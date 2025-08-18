@@ -15,14 +15,29 @@ module.exports = {
         //mandar dados de especie padrao cadastrado no sistema
         res.render("nova-conta/index", {fileName:"especie"});
     },
-    fazerOque: function(req, res){
+    oqueFazer: function(req, res){
         
-        res.render("nova-conta/index", {fileName:"fazerOque"});
+        res.render("nova-conta/index", {fileName:"oque-fazer"});
     },
-     fazer: function(req, res){
+     doar: function(req, res){
         //direcionar o usuario dependendo da escolha
         //doar continua o cadasto
         //adotar e direcionado para o index da aplicacao
-        res.render("nova-conta/index", {fileName:"fazerOque"});
+        res.render("nova-conta/index", {fileName:"caracteristica-pet"});
+    },
+    preferenciasUser: function(req, res)
+    {
+        //trazer as caracteristicas cadastrado e manda para o usuario escolher
+        res.render("nova-conta/index", {fileName:"preferencia-user"});
+    },
+    adicionarFoto: function(req, res){
+
+        res.render("nova-conta/index", {fileName:"adicionar-fotos"});
+    },
+    salvarFotos: function(req, res){
+        res. render('aventura-pet', {fileName:"main"});
     }
+
+
+    
 }

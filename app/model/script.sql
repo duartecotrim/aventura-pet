@@ -115,6 +115,28 @@ CREATE TABLE caracterstica_pet(
 
 );
 
+CREATE TABLE preferencia_usuario(
+    id_preferencia_usuario INT PRIMARY KEY,
+    id_sociabilidade INT,
+    id_adaptalidade INT,
+    id_temperamento INT,
+    cor_olhos_id_cor INT,
+    cor_pelagem_id_cor INT,
+    id_porte INT,
+    id_raca INT,
+    id_especie INT,
+    FOREIGN KEY (id_sociabilidade) REFERENCES sociabilidade(id_sociabilidade),
+    FOREIGN KEY (id_adaptalidade) REFERENCES adaptalidade(id_adaptalidade),
+    FOREIGN KEY (id_temperamento) REFERENCES temperamento(id_temperamento),
+    FOREIGN KEY (cor_olhos_id_cor) REFERENCES cor(id_cor),
+    FOREIGN KEY (cor_pelagem_id_cor) REFERENCES cor(id_cor),
+    FOREIGN KEY (id_porte) REFERENCES porte(id_porte),
+    FOREIGN KEY (id_raca) REFERENCES raca(id_raca),
+    FOREIGN KEY (id_especie) REFERENCES especie(id_especie)
+
+
+)
+
 -- pet 1 tem n imagen
 -- iemgem 1 tem 1 pet
 CREATE TABLE imagem_pet(
