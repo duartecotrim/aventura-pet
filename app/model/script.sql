@@ -165,3 +165,11 @@ CREATE TABLE pet_curtido(
     FOREIGN KEY (id_usuario)REFERENCES usuario(id_usuario),
     FOREIGN KEY (id_pet)REFERENCES pet(id_pet)
 );
+
+CREATE TABLE pet_adotado(
+    id_pet_adotado INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT,
+    id_pet INT,
+    FOREIGN KEY (id_usuario)REFERENCES usuario(id_usuario),
+    FOREIGN KEY (id_pet)REFERENCES pet(id_pet)
+);
