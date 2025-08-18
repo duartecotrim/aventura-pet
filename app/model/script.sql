@@ -74,7 +74,7 @@ CREATE TABLE pet(
     id_pet INT PRIMARY KEY AUTO_INCREMENT,
     id_usuario INT,
     nome_pet VARCHAR(50),   
-    adotado BOOLEAN 
+    
 );
 
 -- pet 1 tem n documentos
