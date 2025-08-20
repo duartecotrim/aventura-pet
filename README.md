@@ -2,15 +2,15 @@
 
 ## TCC DO CURSO TECNICO DE INFORMATICA PARA WEB
 
-### ESCOLA: FIEBTECH JADRIM BELVAL
+### ESCOLA: FIEBTECH JARDIM BELVAL
 ### TURMA: MIIAN-2025 / 
 #### BARUERI - SÃO PAULO - BRASIL
 
 ## EXPLICAÇÃO
 
-Projeto do trabalho de conclusao do curso de INFORMATICA PARA WEB.
-criação de site para doação e adoção de animais de estimação.
-tecnologia utilizada
+Projeto do trabalho de conclusão do curso de INFORMATICA PARA WEB.
+Criação de site para doação e adoção de animais de estimação.
+tecnologias utilizada:
 
 ### COLABORADORES
 - VINICIUS HENRIQUE
@@ -20,21 +20,21 @@ tecnologia utilizada
 - FLORISVALDO
 
 #### LINGUEGEM PRINCIPAL
-- javascript
+- Javascript
 
 
 #### BACK-END
 - Nodejs 
-- bcrypt
-- dotenv
-- ejs
-- express
-- express-session
-- express-validator
-- mysql2
-- passport
-- passport-local
-- sequelize
+- Bcrypt
+- Dotenv
+- Ejs
+- Express
+- Express-session
+- Express-validator
+- Mysql2
+- Passport
+- Passport-local
+- Sequelize
 
 #### BANCO DE DADOS
 - Mysql
