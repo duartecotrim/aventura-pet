@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+    <title>Marketplace - Aventura Pet</title>
+    <link rel="stylesheet" href="css/marketplace.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img class="logo-avtpet" src="assets/logo aventura pet.png" alt="logo aventura pet">
+                <h1>AVENTURA PET</h1>
+            </div>
+
+            <nav>
+                <ul class="menu-list">
+                    <li><a href="pets.html">Pets</a></li>
+                    <li><a href="marketplace.html" class="ativo">Marketplace</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2 class="titulo-pagina">🛒 Produtos para seu pet</h2>
+
+        <!-- Barra de filtros e busca -->
+        <section class="filtros">
+            <div class="categorias">
+                <button data-categoria="todos" class="ativo">Todos</button>
+                <button data-categoria="racao">Rações</button>
+                <button data-categoria="brinquedo">Brinquedos</button>
+                <button data-categoria="acessorio">Acessórios</button>
+            </div>
+            <div class="busca">
+                <input type="text" id="campoBusca" placeholder="Buscar produto...">
+            </div>
+        </section>
+
+        <div class="produtos">
+            <div class="card" data-categoria="racao">
+                <img src="assets/OIP.webp" alt="Ração Premium">
+                <h3>Ração Premium Gatos - 10kg</h3>
+                <p>Nutrição completa para gatos adultos.</p>
+                <span class="preco">R$ 279,90</span>
+                <button>Adicionar ao carrinho</button>
+            </div>
+
+            <div class="card" data-categoria="brinquedo">
+                <img src="assets/OIP (1).webp" alt="Casinha de madeira">
+                <h3>Casa de Madeira para seu Pet</h3>
+                <p>Ideal para a saúde dental e diversão.</p>
+                <span class="preco">R$ 149,90</span>
+                <button>Adicionar ao carrinho</button>
+            </div>
+
+            <div class="card" data-categoria="acessorio">
+                <img src="assets/pote de ração.webp" alt="Pote de ração">
+                <h3>Pote de ração automático</h3>
+                <p>Perfeita para alimentação do seu pet.</p>
+                <span class="preco">R$ 99,90</span>
+                <button>Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
