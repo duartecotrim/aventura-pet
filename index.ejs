@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Testar Rotas CRUD</h1>
+
+  <!-- GET (read) -->
+  <h2>GET - Listar</h2>
+  <ul>
+    <li><a href="/adaptabilidade">adapt</a></li>
+    <li><a href="/caracteristicaPet">caracteristicaPet</a></li>
+    <li><a href="/cor">cor</a></li>
+    <li><a href="/cuidadoVeterinario">cuidadoVeterinario</a></li>
+    <li><a href="/documentoPet">documentoPet</a></li>
+    <li><a href="/especie">especie</a></li>
+    <li><a href="/imagemPet">imagemPet</a></li>
+    <li><a href="/passwordHash">passwordHash</a></li>
+    <li><a href="/petCurtido">petCurtido</a></li>
+    <li><a href="/pet">pet</a></li>
+    <li><a href="/petvisualizado">petvisualizado</a></li>
+    <li><a href="/porte">porte</a></li>
+    <li><a href="/raca">raca</a></li>
+    <li><a href="/sociabilidade">sociabilidade</a></li>
+    <li><a href="/temperamento">temperamento</a></li>
+    <li><a href="/usuario">usuario</a></li>
+  </ul>
+
+  <!-- POST (create) -->
+  <h2>POST - Criar</h2>
+  <ul>
+    <li><form action="/contatoUsuario" method="POST"><button type="submit">Criar contatoUsuario</button></form></li>
+    <li><form action="/caracteristicaPet" method="POST"><button type="submit">Criar caracteristicaPet</button></form></li>
+    <li><form action="/cor" method="POST"><button type="submit">Criar cor</button></form></li>
+    <li><form action="/cuidadoVeterinario" method="POST"><button type="submit">Criar cuidadoVeterinario</button></form></li>
+    <li><form action="/documentoPet" method="POST"><button type="submit">Criar documentoPet</button></form></li>
+    <li><form action="/especie" method="POST"><button type="submit">Criar especie</button></form></li>
+    <li><form action="/imagemPet" method="POST"><button type="submit">Criar imagemPet</button></form></li>
+    <li><form action="/passwordHash" method="POST"><button type="submit">Criar passwordHash</button></form></li>
+    <li><form action="/petCurtido" method="POST"><button type="submit">Criar petCurtido</button></form></li>
+    <li><form action="/pet" method="POST"><button type="submit">Criar pet</button></form></li>
+    <li><form action="/petvisualizado" method="POST"><button type="submit">Criar petvisualizado</button></form></li>
+    <li><form action="/porte" method="POST"><button type="submit">Criar porte</button></form></li>
+    <li><form action="/raca" method="POST"><button type="submit">Criar raca</button></form></li>
+    <li><form action="/sociabilidade" method="POST"><button type="submit">Criar sociabilidade</button></form></li>
+    <li><form action="/temperamento" method="POST"><button type="submit">Criar temperamento</button></form></li>
+    <li><form action="/usuario" method="POST"><button type="submit">Criar usuario</button></form></li>
+  </ul>
+
+  <!-- PUT (edit) -->
+  <h2>PUT - Editar</h2>
+  <ul>
+    <li><form action="/contatoUsuario/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar contatoUsuario (ID 1)</button></form></li>
+    <li><form action="/caracteristicaPet/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar caracteristicaPet (ID 1)</button></form></li>
+    <li><form action="/cor/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar cor (ID 1)</button></form></li>
+    <li><form action="/cuidadoVeterinario/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar cuidadoVeterinario (ID 1)</button></form></li>
+    <li><form action="/documentoPet/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar documentoPet (ID 1)</button></form></li>
+    <li><form action="/especie/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar especie (ID 1)</button></form></li>
+    <li><form action="/imagemPet/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar imagemPet (ID 1)</button></form></li>
+    <li><form action="/passwordHash/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar passwordHash (ID 1)</button></form></li>
+    <li><form action="/petCurtido/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar petCurtido (ID 1)</button></form></li>
+    <li><form action="/pet/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar pet (ID 1)</button></form></li>
+    <li><form action="/petvisualizado/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar petvisualizado (ID 1)</button></form></li>
+    <li><form action="/porte/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar porte (ID 1)</button></form></li>
+    <li><form action="/raca/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar raca (ID 1)</button></form></li>
+    <li><form action="/sociabilidade/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar sociabilidade (ID 1)</button></form></li>
+    <li><form action="/temperamento/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar temperamento (ID 1)</button></form></li>
+    <li><form action="/usuario/editar/salvar" method="POST"><input type="hidden" name="_method" value="PUT"><button type="submit">Editar usuario (ID 1)</button></form></li>
+  </ul>
+
+  <!-- DELETE -->
+  <h2>DELETE - Deletar</h2>
+  <ul>
+  <li><a href="/contatoUsuario/delete/1">Deletar contatoUsuario (ID 1)</a></li>
+  <li><a href="/caracteristicaPet/delete/1">Deletar caracteristicaPet (ID 1)</a></li>
+  <li><a href="/cor/delete/1">Deletar cor (ID 1)</a></li>
+  <li><a href="/cuidadoVeterinario/delete/1">Deletar cuidadoVeterinario (ID 1)</a></li>
+  <li><a href="/documentoPet/delete/1">Deletar documentoPet (ID 1)</a></li>
+  <li><a href="/especie/delete/1">Deletar especie (ID 1)</a></li>
+  <li><a href="/imagemPet/delete/1">Deletar imagemPet (ID 1)</a></li>
+  <li><a href="/passwordHash/delete/1">Deletar passwordHash (ID 1)</a></li>
+  <li><a href="/petCurtido/delete/1">Deletar petCurtido (ID 1)</a></li>
+  <li><a href="/pet/delete/1">Deletar pet (ID 1)</a></li>
+  <li><a href="/petvisualizado/delete/1">Deletar petvisualizado (ID 1)</a></li>
+  <li><a href="/porte/delete/1">Deletar porte (ID 1)</a></li>
+  <li><a href="/raca/delete/1">Deletar raca (ID 1)</a></li>
+  <li><a href="/sociabilidade/delete/1">Deletar sociabilidade (ID 1)</a></li>
+  <li><a href="/temperamento/delete/1">Deletar temperamento (ID 1)</a></li>
+  <li><a href="/usuario/delete/1">Deletar usuario (ID 1)</a></li>
+</ul>
+</body>
+</html>
