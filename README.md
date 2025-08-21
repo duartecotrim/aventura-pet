@@ -12,16 +12,13 @@ Projeto do trabalho de conclusão do curso de INFORMATICA PARA WEB.
 Criação de site para doação e adoção de animais de estimação.
 tecnologias utilizada:
 
-### COLABORADORES
-- VINICIUS HENRIQUE
-- VINICIUS DUARTE
-- GUILHERME SILVA
-- DANIEL SANTOS
-- FLORISVALDO
-
 #### LINGUEGEM PRINCIPAL
 - Javascript
 
+#### FRONT-END
+- Html5
+- CSS
+- Javascript
 
 #### BACK-END
 - Nodejs 
@@ -39,9 +36,12 @@ tecnologias utilizada:
 #### BANCO DE DADOS
 - Mysql
 
-#### FRONT-END
-- Html5
-- CSS
-- Javascript
+
+### COLABORADORES
+- VINICIUS HENRIQUE
+- VINICIUS DUARTE
+- GUILHERME SILVA
+- DANIEL SANTOS
+- FLORISVALDO
 
 ## ANO DE CONCLUSAO: 2025
