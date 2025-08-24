@@ -4,7 +4,7 @@
   "description": "TCC DO CURSO TECNICO DE INFORMATICA PARA WEB TURMA: MIIAN-2025",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -47,5 +47,8 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
