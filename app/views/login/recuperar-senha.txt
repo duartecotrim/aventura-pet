@@ -1,0 +1,7 @@
+<main>
+    <form action="/login/recuperar" method="post">
+        <labe>Email</labe>
+        <input type="email" name="emailUsuario">
+        <input type="submit" value="verificar">
+    </form>
+</main>
