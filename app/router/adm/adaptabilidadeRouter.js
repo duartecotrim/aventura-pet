@@ -3,19 +3,19 @@ const adaptabilidadeController = require('../../controllers/adm/adaptabilidadeCo
 
 const adaptabilidadeRouter = express.Router();
 
-adaptabilidadeRouter.post('/adaptabilidade', (req, res) => {
+adaptabilidadeRouter.post('/adm/adaptabilidade', (req, res) => {
   adaptabilidadeController.create(req, res);
 });
 
-adaptabilidadeRouter.get('/adaptabilidade', (req, res) => {
+adaptabilidadeRouter.get('/adm/adaptabilidade', (req, res) => {
   adaptabilidadeController.read(req, res);
 });
 
-adaptabilidadeRouter.post('/adaptabilidade/editar/salvar', (req, res) => {
+adaptabilidadeRouter.post('/adm/adaptabilidade/editar/salvar', (req, res) => {
   adaptabilidadeController.edit(req, res);
 });
 
-adaptabilidadeRouter.get('/adaptabilidade/delete/:id', (req, res) => {
+adaptabilidadeRouter.get('/adm/adaptabilidade/delete/:id', (req, res) => {
   adaptabilidadeController.delete(req, res);
 });
 

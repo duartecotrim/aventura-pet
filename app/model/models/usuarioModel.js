@@ -12,6 +12,10 @@ const usuarioModel = connect.define(
         nome_usuario:{
             type: DataTypes.STRING(100),
             allowNull: false
+        },
+        tipoUsuario:{
+            type: DataTypes.BOOLEAN,
+            allowNull: false
         }
     },
     {

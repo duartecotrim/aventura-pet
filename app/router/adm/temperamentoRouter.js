@@ -3,19 +3,19 @@ const temperamentoController = require('../../controllers/adm/temperamentoContro
 
 const temperamentoRouter = express.Router();
 
-temperamentoRouter.post('/temperamento', (req, res) => {
+temperamentoRouter.post('/adm/temperamento', (req, res) => {
   temperamentoController.create(req, res);
 });
 
-temperamentoRouter.get('/temperamento', (req, res) => {
+temperamentoRouter.get('/adm/temperamento', (req, res) => {
   temperamentoController.read(req, res);
 });
 
-temperamentoRouter.post('/temperamento/editar/salvar', (req, res) => {
+temperamentoRouter.post('/adm/temperamento/editar/salvar', (req, res) => {
   temperamentoController.edit(req, res);
 });
 
-temperamentoRouter.get('/temperamento/delete/:id', (req, res) => {
+temperamentoRouter.get('/adm/temperamento/delete/:id', (req, res) => {
   temperamentoController.delete(req, res);
 });
 
