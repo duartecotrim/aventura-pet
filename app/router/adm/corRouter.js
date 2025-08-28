@@ -3,19 +3,19 @@ const corController = require('../../controllers/adm/corController');
 
 const corRouter = express.Router();
 
-corRouter.post('/cor', (req, res) => {
+corRouter.post('/adm/cor', (req, res) => {
   corController.create(req, res);
 });
 
-corRouter.get('/cor', (req, res) => {
+corRouter.get('/adm/cor', (req, res) => {
   corController.read(req, res);
 });
 
-corRouter.post('/cor/editar/salvar', (req, res) => {
+corRouter.post('/adm/cor/editar/salvar', (req, res) => {
   corController.edit(req, res);
 });
 
-corRouter.get('/cor/delete/:id', (req, res) => {
+corRouter.get('/adm/cor/delete/:id', (req, res) => {
   corController.delete(req, res);
 });
 
