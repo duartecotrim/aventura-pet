@@ -1,0 +1,11 @@
+
+<main>
+    <h1>nova senha</h1>
+    <form action="/login/nova-senha" method="post">
+        <label>Senha</label>
+        <input type="password" name="senha-1">
+        <label>Senha</label>
+        <input type="password" name="senha-2">
+  <input type="submit" value="recuperar">
+    </form>
+</main>
