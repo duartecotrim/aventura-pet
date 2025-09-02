@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 20px;
+    background-image: linear-gradient(to right, #00376b, #000);
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    align-items: center;
+}
+
+p, h2 {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 20px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+button, input[type="email"], input[type="password"] {
+    padding: 10px;
+    height: 70px;
+    width: 300px;
+    text-align: center;
+    border-radius: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    margin: 5px;
+    left: 5px;
+    right: 7px;
+}
+
+.input-container i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    z-index: 1;
+}
+
+.input-container input {
+    padding-left: 10px;
+    width: 100%;
+}
+
+/* Remove left padding for password input since it doesn't have an icon */
+.input-container input[type="password"] {
+    padding-left: 0;
+}
+
+.continue-button {
+    padding: 10px;
+    height: 70px;
+    width: 300px;
+    text-align: center;
+    border-radius: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    margin: 0px;
+    border: none;
+    background-color: #e79e00; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.continue-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Yellow underline styling for privacy and cookies policy links */
+p u {
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 199, 45);
+    text-decoration-thickness: 2px;
+}
+
+h2{
+    text-decoration: underline;
+}
