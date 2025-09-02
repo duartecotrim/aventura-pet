@@ -4,6 +4,15 @@ const adaptabilidadeValidator = require('../../validator/adm/adapdabilidadeValid
 const { validationResult } = require('express-validator');
 const adaptabilidadeRouter = express.Router();
 
+
+adaptabilidadeRouter.get('/adm/adaptabilidade/new', (req, res) => {
+  adaptabilidadeController.create(req, res);
+});
+
+adaptabilidadeRouter.get('/adm/adaptabilidade/salvar', (req, res)=>
+  adaptabilidadeController.salvar(req, res)
+)
+
 adaptabilidadeRouter.get('/adm/adaptabilidade/novo', (req, res) => {
   adaptabilidadeController.create(req, res);
 });
@@ -19,6 +28,7 @@ adaptabilidadeRouter.get('/adm/adaptabilidade/novo-salvar',
 
     adaptabilidadeController.save(req, res);
 });
+
 
 
 adaptabilidadeRouter.get('/adm/adaptabilidade', (req, res) => {

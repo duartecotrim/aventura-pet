@@ -1,6 +1,7 @@
 //const adaptabilidadeModel = require('../../model/models/adaptalidadeModel');
 
 const adaptabilidadeController = {
+
   create: (req, res, errorValidator = null) => {
     var msg = [];
     if (errorValidator != null) {
@@ -11,7 +12,6 @@ const adaptabilidadeController = {
     res.render('adm/adaptabilidade/index', { fileName: "new", msgErrors: msg });
   },
   save: async (req, res) => {
-
   },
 
   read: async (req, res) => {
