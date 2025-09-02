@@ -24,6 +24,7 @@ const temperamentoRouter = require('./app/router/adm/temperamentoRouter');
 const usuarioRouter = require('./app/router/public/usuarioRouter');
 const loginRouter = require('./app/router/loginRouter');
 const novaContaRouter = require('./app/router/novaContaRouter');
+const admRouter = require('./app/router/adm/admRouter');
 
 app.use(express.static('./app/public'));
 app.use(express.json());
@@ -52,6 +53,8 @@ app.use('/', racaRouter);
 app.use('/', sociabilidadeRouter);
 app.use('/', temperamentoRouter);
 app.use('/', usuarioRouter);
+app.use('/', admRouter);
+
 
 app.listen(port, function(){
     console.log(`app online in http://${host}:${port}`);
