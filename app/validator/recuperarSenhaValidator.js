@@ -16,4 +16,4 @@ const recuperarsenhavalidator = checkSchema({
     }
 })
 
-module.exports = recuperarsenhavalidator;
+module.exports = recuperarSenhaValidator;

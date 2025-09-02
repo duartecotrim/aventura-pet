@@ -3,9 +3,13 @@ const adaptabilidadeController = require('../../controllers/adm/adaptabilidadeCo
 
 const adaptabilidadeRouter = express.Router();
 
-adaptabilidadeRouter.post('/adm/adaptabilidade', (req, res) => {
+adaptabilidadeRouter.get('/adm/adaptabilidade/new', (req, res) => {
   adaptabilidadeController.create(req, res);
 });
+
+adaptabilidadeRouter.get('/adm/adaptabilidade/salvar', (req, res)=>
+  adaptabilidadeController.salvar
+)
 
 adaptabilidadeRouter.get('/adm/adaptabilidade', (req, res) => {
   adaptabilidadeController.read(req, res);

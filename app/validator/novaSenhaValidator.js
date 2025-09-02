@@ -1,5 +1,5 @@
 const {checkSchema} = require('express-validator');
-const novasenhavalidator = checkSchema({
+const novaSenhaValidator = checkSchema({
     password:{
         erroMessage: 'Senha Invalida',
         notEmpty: true,
@@ -24,4 +24,4 @@ const novasenhavalidator = checkSchema({
 }
 })
 
-module.exports = novasenhavalidator;
+module.exports = novaSenhaValidator;
