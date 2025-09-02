@@ -1,11 +1,25 @@
 const express = require('express');
 const adaptabilidadeController = require('../../controllers/adm/adaptabilidadeController');
-
+const adaptabilidadeValidator = require('../../validator/adm/adapdabilidadeValidator');
+const { validationResult } = require('express-validator');
 const adaptabilidadeRouter = express.Router();
 
-adaptabilidadeRouter.post('/adm/adaptabilidade', (req, res) => {
+adaptabilidadeRouter.get('/adm/adaptabilidade/novo', (req, res) => {
   adaptabilidadeController.create(req, res);
 });
+
+adaptabilidadeRouter.get('/adm/adaptabilidade/novo-salvar',
+  adaptabilidadeValidator,
+  function (req, res, next){
+    const errorResult = validationResult(req);
+    if (!errorResult.isEmpty()) {
+      let errorValidator = errorResult.array();
+      return adaptabilidadeController.create(req, res, errorValidator);
+    };
+
+    adaptabilidadeController.save(req, res);
+});
+
 
 adaptabilidadeRouter.get('/adm/adaptabilidade', (req, res) => {
   adaptabilidadeController.read(req, res);

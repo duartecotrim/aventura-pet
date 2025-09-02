@@ -1,13 +1,24 @@
+//const adaptabilidadeModel = require('../../model/models/adaptalidadeModel');
+
 const adaptabilidadeController = {
-  create: (req, res) => {
-    // lógica para criar adaptabilidade
-    //res.send('adaptabilidade criado com sucesso');
-    res.render('adm/adaptabilidade/index');
+  create: (req, res, errorValidator = null) => {
+    var msg = [];
+    if (errorValidator != null) {
+      errorValidator.forEach(error => {
+        msg.push({ "messagem": error.msg });
+      });
+    }
+    res.render('adm/adaptabilidade/index', { fileName: "new", msgErrors: msg });
+  },
+  save: async (req, res) => {
+
   },
 
-  read: (req, res) => {
+  read: async (req, res) => {
+    //const adaptabilidades = await adaptabilidadeModel.findAll();
+    //const dataAdaptabilidades = JSON.stringify(adaptabilidades, null);
     // lógica para listar adaptabilidade
-    res.render('adm/adaptabilidade/index', {fileName: "main"});
+    res.render('adm/adaptabilidade/index', { fileName: "main"/*, data: dataAdaptabilidades*/ });
   },
 
   edit: (req, res) => {

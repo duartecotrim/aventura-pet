@@ -1,0 +1,13 @@
+<main>
+    <%
+        if(msgErrors){
+            msgErrors.forEach(error =>)
+        }
+    %>
+    <h3>novo cadastro de adaptabilidade</h3>
+    <form method="post" action="/adm/adaptabilidade/novo-salvar" >
+        <label>descricao</label>
+        <input type="text" name="descricaoAdaptabilidade" maxlength="50">
+        <input type="submit" value="SALVAR">
+    </form>
+</main>
