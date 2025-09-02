@@ -43,7 +43,7 @@ botoesCategoria.forEach(botao => {
 });
 
 // Busca por texto
-campoBusca.addEventListener('input', () => {
+/*campoBusca.addEventListener('input', () => {
     const texto = campoBusca.value.toLowerCase();
 
     produtos.forEach(produto => {
@@ -55,7 +55,7 @@ campoBusca.addEventListener('input', () => {
             produto.style.display = 'none';
         }
     });
-});
+});*/
 
 // Seleciona elementos
 const modal = document.getElementById('modalPet');
