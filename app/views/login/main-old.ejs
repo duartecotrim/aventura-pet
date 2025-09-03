@@ -1,0 +1,33 @@
+<main>
+    <h1>logo aqui</h1>
+    <p>texto explicando algo</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, neque, eum, dolor deserunt repellendus voluptas corporis officia saepe suscipit tempore cum incidunt assumenda cumque? Quod inventore officia voluptatibus ullam cum?</p>
+    <h4> inputs de usuario e senha </h4>   
+    
+    <%
+        
+        if(msgErrors.length !=0)
+        {
+            msgErrors.forEach(error => {%>
+                //criar formatacao de erro
+                <p>mensagem de error: <%= error.menssagem %></p>
+            <%});
+        }
+    %>
+
+    <form action="/login/entrar" method="post" id="form">
+        <label for="useremail">Email usuario</label>
+        <input type="email" id="useremail" name="useremail">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" >
+        <input type="submit">        
+    </form>
+    <a href="/login/nova-conta">CADASTRAR CONTA</a>
+    <a href='/login/recuperar-conta'>RECUPERAR CONTA</a>
+    <h3>img de exemplo</h3>
+    <img src="/img/login.jpeg" alt="">
+</main>
+
+<script src="/js/form-login.js">
+    
+</script>
