@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de Senha - Aventura Pet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="recuperar-senha.css">
+</head>
+
+<body>
+
+    <img class="logo" src="assets/logo aventura pet.png" alt="logo aventura pet">
+    <p>Informe seu e-mail e enviaremos um link para redefinir sua senha.</p>
+
+    <form action="/login/recuperar" method="post" class="form-recuperar">
+        <div class="input-container">
+            <i class="fas fa-envelope"></i>
+            <input class="email" type="email" name="emailUsuario" placeholder="Digite seu E-mail" required>
+        </div>
+
+        <button type="submit" class="continue-button">Verificar</button>
+
+        <a href="main.html" class="voltar-login">← Voltar para o login</a>
+    </form>
+
+</body>
+
+</html>
