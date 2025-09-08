@@ -1,3 +1,17 @@
 <main>
+<%console.log(data)
     
+%>
+    <form method="post" action="/adm/adaptabilidade/edit-salve">
+        <label>Descrição Adaptabilidade</label>
+        <% data.forEach(descAdapt =>{%>
+            <input type="hidden" name="idAdapt" value="<%=descAdapt.id_adaptalidade%>">
+            <input type="text" name="descAdapt" value="<%=descAdapt.descricao_adaptalidade%>">
+        <%})%>
+        
+        <input type="submit" value="SALVAR">
+        <a href="/adm/adaptabilidade">CANCELAR</a>
+
+ 
+    </form>
 </main>
