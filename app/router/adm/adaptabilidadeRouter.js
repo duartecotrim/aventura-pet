@@ -24,7 +24,7 @@ adaptabilidadeRouter.post('/adm/adaptabilidade/new-salve',
       isLength: {
         options: {
           min: 4,
-          //max: 50
+          max: 50
         }
       }
     }
