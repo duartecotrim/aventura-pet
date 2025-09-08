@@ -1,14 +1,17 @@
 module.exports = {
     novaConta: function(req, res){
+        
         res.render("nova-conta/index",{fileName:"boas-vindas"});
+        req.session.strErrorMsg = "";
     },
     avisos: function(req, res){
         res.render("nova-conta/index", {fileName:"avisos"});
     },
-     nome: function(req, res){
+    nome: function(req, res){
         res.render("nova-conta/index", {fileName:"nome"});
     },
-     contato: function(req, res){
+    contato: function(req, res){
+     
         res.render("nova-conta/index", {fileName:"contato"});
     },
     especie: function(req, res){
