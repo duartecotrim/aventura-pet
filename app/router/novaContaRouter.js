@@ -5,8 +5,8 @@ const novaContaRouter = express.Router();
 const { checkSchema, validationResult } = require('express-validator');
 
 const myValidationResult = validationResult.withDefaults({
-    formatter:(error)=>{
-        return{
+    formatter: (error) => {
+        return {
             campo: error.path,
             msg: error.msg
         }
@@ -24,7 +24,7 @@ novaContaRouter.get('/nova-conta/nome', function (req, res) {
     novaContaController.nome(req, res);
 });
 
-novaContaRouter.post('/nova-conta/contato', 
+novaContaRouter.post('/nova-conta/contato',
     checkSchema({
         nome: {
             in: ['body'],
@@ -52,94 +52,120 @@ novaContaRouter.post('/nova-conta/contato',
             return res.redirect('/nova-conta');
         }
 
-        if(!req.session.newAcconut){
-            req.session.newAcconut = [];
+        if (!req.session.newAccount) {
+            req.session.newAccount = [];
         }
-        req.session.newAcconut.push({name: req.body.nome});
+        req.session.newAccount.push({ name: req.body.nome });
         novaContaController.contato(req, res);
     }
 );
 
 novaContaRouter.post('/nova-conta/oque-fazer',
     checkSchema({
-        telefone:{
-            in:['body'],
+        telefone: {
+            in: ['body'],
             errorMessage: "telefone invalido",
             trim: true,
             escape: true,
             notEmpty: true,
-            isNumeric:true,
-            isLength:{
-                options:{
-                    min:11,
-                    max:20
+            isNumeric: true,
+            isLength: {
+                options: {
+                    min: 11,
+                    max: 20
                 }
             }
         },
-        email:{
-            in:['body'],
+        email: {
+            in: ['body'],
             errorMessage: "email invalido",
             trim: true,
             escape: true,
             notEmpty: true,
             isEmail: true,
-            isLength:{
-                options:{
-                    max:100
+            isLength: {
+                options: {
+                    max: 100
                 }
             }
         },
-        cep:{
-            in:['body'],
+        cep: {
+            in: ['body'],
             errorMessage: "cep invalido",
             trim: true,
             escape: true,
             notEmpty: true,
-            isNumeric:true,
-            isLength:{
-                options:{
-                    min:8,
-                    max:8
+            isNumeric: true,
+            isLength: {
+                options: {
+                    min: 8,
+                    max: 8
                 }
             }
         }
     }),
     function (req, res) {
         const errorResult = myValidationResult(req);
-        if(!errorResult.isEmpty()){
-           if (!req.session.strErrorMsg) {
+        if (!errorResult.isEmpty()) {
+            if (!req.session.strErrorMsg) {
                 req.session.strErrorMsg = "";
             }
             req.session.strErrorMsg = "campos invalido tente novamente";
             return res.redirect('/nova-conta');
         }
 
-        req.session.newAcconut.push({
-            contato:{
+        req.session.newAccount.push({
+            contato: {
                 telefone: req.body.telefone,
                 email: req.body.email,
                 cep: req.body.cep
-        }});
+            }
+        });
         novaContaController.oqueFazer(req, res);
-});
+    });
 
-novaContaRouter.post('/nova-conta/fazer', function (req, res) {
-    //salvar dados na session
-    //VERIFICAR SE O USUARIO QUER ADOTAR OU DOAR
-    //SE QUER ADOTAR é direcionado direto para a pagina principal
-    //nao pode estar vazio
+novaContaRouter.post('/nova-conta/fazer',
+    checkSchema({
+        opcao: {
+            in: ['body'],
+            trim: true,
+            escape: true,
+            isIn: {
+                options: [[0, 1]],
+                errorMessage: "opcao invalida",
+                bail:true
+            }
+        }
+    }),
+    function (req, res) {
+         const errorResult = myValidationResult(req);
+         if (!errorResult.isEmpty()) {
+            if (!req.session.strErrorMsg) {
+                req.session.strErrorMsg = "";
+            }
+            req.session.strErrorMsg = "opção invalida tente novamente";
+            return res.redirect('/nova-conta');
+        }
 
-    if (typeof req.body.adotar != 'undefined') {
-        novaContaController.preferenciasUser(req, res)
-    }
+        req.session.newAccount.push({optionUser: req.body.opcao});
 
-    if (typeof req.body.doar != 'undefined') {
-        novaContaController.doar(req, res);
-    }
+        novaContaController.preferenciasUser(req, res);
+        //salvar dados na session
+        //VERIFICAR SE O USUARIO QUER ADOTAR OU DOAR
+        //SE QUER ADOTAR é direcionado direto para a pagina principal
+        //nao pode estar vazio
 
-    //se doar continua o fluxo de cadastro
+        /*if (typeof req.body.adotar != 'undefined') {
+            novaContaController.preferenciasUser(req, res)
+        }
+    
+        if (typeof req.body.doar != 'undefined') {
+            novaContaController.doar(req, res);
+        }*/
 
-});
+        //se doar continua o fluxo de cadastro
+
+    });
 
 novaContaRouter.post('/nova-conta/buscar-por-preferencia', function (req, res) {
     //salva as preferencia do usuario e direciona para a pagina principal
