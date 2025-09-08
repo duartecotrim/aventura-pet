@@ -6,9 +6,11 @@
     <p>opçoes vira do back and</p>
     <form action="/nova-conta/buscar-por-preferencia" method="post">
         <p>ESPECIE</p>
-        <label>gato</label>
-        <input type="checkbox" name="gato">
-        <label>cachorro</label>
+        <% especies.forEach(especie =>{%>
+            <label><%= especie.nome_especie %></label>
+            <input type="checkbox" name="especie" value="<%=especie.id_especie%>">
+        <%})%>
+       
         <br>
         <p>COR DA PELAGEM</p>
         <input type="checkbox" name="cachorro">
