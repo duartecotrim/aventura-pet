@@ -172,6 +172,12 @@ novaContaRouter.post('/nova-conta/buscar-por-preferencia', function (req, res) {
     aventuraPetController.index(req, res)
 });
 
+novaContaRouter.get('/nova-conta/buscar-racas/:idEspecie', function(req, res){
+    novaContaController.buscarRacas(req, res);
+    console.log(req.params.idEspecie);
+    
+})
+
 novaContaRouter.post('/nova-conta/caracteristica-pet', function (req, res) {
     //salvar
     //direcionar para o controler de adiciar fotos
