@@ -1,4 +1,6 @@
 const especieModel = require('../model/models/especieModel');
+const racasModel = require('../model/models/racaModel');
+const corModel = require('../model/models/corModel');
 
 module.exports = {
     novaConta: function(req, res){
@@ -31,10 +33,8 @@ module.exports = {
         res.render("nova-conta/index", {fileName:"caracteristica-pet"});
     },
     preferenciasUser: async function(req, res)
-    {
-        
-        let newAccount = req.session.newAccount;
-        
+    {        
+        let newAccount = req.session.newAccount;        
         newAccount.forEach(item =>{
             nameUser = item.name;
             contact = item.contato;
@@ -44,11 +44,12 @@ module.exports = {
         
         switch (optionUser) {
             case 0:
-              
+                const cores = await corModel.findAll();
                 const especies = await especieModel.findAll();                
                 res.render("nova-conta/index", {
                     fileName: "preferencia-user", 
-                    "especies": JSON.parse(JSON.stringify(especies, null))
+                    "especies": JSON.parse(JSON.stringify(especies, null)),
+                    "cores": JSON.parse(JSON.stringify(cores, null))
                 });
                 break;
         
@@ -67,6 +68,12 @@ module.exports = {
     },
     salvarFotos: function(req, res){
         res. render('aventura-pet', {fileName:"main"});
+    },
+
+    buscarRacas: async function(req, res){
+        const racas = await racasModel.findAll({where:{id_especie: req.params.idEspecie}});
+        
+        res.send({racas: JSON.parse(JSON.stringify(racas, null))}).end();
     }
 
 

@@ -21,7 +21,6 @@ const racaModel = connect.define(
 }
 );
 
-const especieModel = require('./especieModel');
-racaModel.belongsTo(especieModel,{foreignKey:id_especie, targetKey: id_especie});
+
 
 module.exports = racaModel;
