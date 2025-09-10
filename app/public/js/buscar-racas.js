@@ -26,7 +26,7 @@ function criaElemento(data, elemetoPai) {
         var label = document.createElement('label');
         var input = document.createElement('input');
         label.innerText = raca.nome_raca;
-        input.setAttribute("type", "radio");
+        input.setAttribute("type", "checkbox");
         input.setAttribute("name", "raca");
         input.setAttribute("class", "raca")
         input.setAttribute("value", raca.id_raca);

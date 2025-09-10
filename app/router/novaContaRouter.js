@@ -167,9 +167,17 @@ novaContaRouter.post('/nova-conta/fazer',
 
     });
 
-novaContaRouter.post('/nova-conta/buscar-por-preferencia', function (req, res) {
+novaContaRouter.post('/nova-conta/preferencia-salvar',
+    checkSchema({
+        especie:{},
+        raca:{},
+        
+
+    }),
+    function (req, res) {
+    console.log(req.body);
     //salva as preferencia do usuario e direciona para a pagina principal
-    aventuraPetController.index(req, res)
+    //aventuraPetController.index(req, res)
 });
 
 novaContaRouter.get('/nova-conta/buscar-racas/:idEspecie', function(req, res){
