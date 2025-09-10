@@ -1,6 +1,11 @@
 const especieModel = require('../model/models/especieModel');
 const racasModel = require('../model/models/racaModel');
 const corModel = require('../model/models/corModel');
+const porteModel = require('../model/models/porteModel');
+const sociabilidadeModel = require('../model/models/sociabilidadeModel');
+const adaptabilidadeModel = require('../model/models/adaptalidadeModel');
+const temperamentoModel = require('../model/models/temperamentoModel');
+
 
 module.exports = {
     novaConta: function(req, res){
@@ -45,11 +50,19 @@ module.exports = {
         switch (optionUser) {
             case 0:
                 const cores = await corModel.findAll();
-                const especies = await especieModel.findAll();                
+                const especies = await especieModel.findAll();     
+                const portes = await porteModel.findAll(); 
+                const adaptabilidades = await adaptabilidadeModel.findAll();
+                const sociabilidades = await sociabilidadeModel.findAll();
+                const temperamentos = await temperamentoModel.findAll();
                 res.render("nova-conta/index", {
                     fileName: "preferencia-user", 
                     "especies": JSON.parse(JSON.stringify(especies, null)),
-                    "cores": JSON.parse(JSON.stringify(cores, null))
+                    "cores": JSON.parse(JSON.stringify(cores, null)),
+                    "portes": JSON.parse(JSON.stringify(portes, null)),
+                    "adaptabilidades":JSON.parse(JSON.stringify(adaptabilidades, null)),
+                    "sociabilidades":JSON.parse(JSON.stringify(sociabilidades, null)),
+                    "temperamentos":JSON.parse(JSON.stringify(temperamentos, null))
                 });
                 break;
         
