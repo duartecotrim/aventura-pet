@@ -4,11 +4,11 @@
             <h1>QUAL É SUA PREFERENCIA PARA PORCURAMOS</h1>
             <p>MULTIPLO CHEBOX NA PAGINA</p>
             <p>opçoes vira do back and</p>
-            <form action="/nova-conta/buscar-por-preferencia" method="post">
+            <form action="/nova-conta/preferencia-salvar" method="post">
                 <p>ESPECIE</p>
                 <% especies.forEach(especie=>{%>
                     <label><%= especie.nome_especie %></label>
-                    <input onclick="buscarRaca(this)" type="checkbox" name="especie" value="<%=especie.id_especie%>">
+                    <input onclick="buscarRaca(this)" type="radio" name="especie" value="<%=especie.id_especie%>">
                 <%})%>
                 <br>
                 <p>RAÇAS</p>
