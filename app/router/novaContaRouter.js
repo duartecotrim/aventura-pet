@@ -168,12 +168,19 @@ novaContaRouter.post('/nova-conta/fazer',
     });
 
 novaContaRouter.post('/nova-conta/preferencia-salvar',
-    checkSchema({
-        especie:{},
-        raca:{},
-        
-
-    }),
+      //FAZER A VALIDACAO DOS CAMPOS DO FORMULARIO 
+    // TIPOS DE DADO DO CAMPO É NO FORMATO NUMERICO POIS ELES SAO IDS
+    
+    //O JSON QUE VAI VIR DO FORMULARIO É IGUAL A BAIXO
+    //TODOS OS CAMPOS SERA ACEITO APENAS O VALOR NUMERO EXCETO O DE RACA QUE SERA UM ARRAY
+    //COM NO MAXIMO 3 ELEMENTOS DO TIPO NUMERICO
+    /*{
+        especie: '2',
+        raca: [ '55', '76', '92' ],
+        porte: '3',
+        corpelagem: '3',
+        corolhos: '5'
+    }*/
     function (req, res) {
     console.log(req.body);
     //salva as preferencia do usuario e direciona para a pagina principal
