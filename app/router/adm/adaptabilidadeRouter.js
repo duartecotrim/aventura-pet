@@ -1,45 +1,125 @@
 const express = require('express');
 const adaptabilidadeController = require('../../controllers/adm/adaptabilidadeController');
-const adaptabilidadeValidator = require('../../validator/adm/adapdabilidadeValidator');
-const { validationResult } = require('express-validator');
+const { checkSchema, validationResult } = require('express-validator');
 const adaptabilidadeRouter = express.Router();
 
+adaptabilidadeRouter.get('/adm/adaptabilidade', (req, res) => {
+  //verificar se o usuario tem permição para acessar a rota
+  adaptabilidadeController.index(req, res);
+});
 
 adaptabilidadeRouter.get('/adm/adaptabilidade/new', (req, res) => {
-  adaptabilidadeController.create(req, res);
+  //verificar se o usuario tem permição para acessar a rota
+  adaptabilidadeController.new(req, res);
 });
 
-adaptabilidadeRouter.get('/adm/adaptabilidade/salvar', (req, res)=>
-  adaptabilidadeController.salvar(req, res)
-)
-
-adaptabilidadeRouter.get('/adm/adaptabilidade/novo', (req, res) => {
-  adaptabilidadeController.create(req, res);
-});
-
-adaptabilidadeRouter.get('/adm/adaptabilidade/novo-salvar',
-  adaptabilidadeValidator,
-  function (req, res, next){
+adaptabilidadeRouter.post('/adm/adaptabilidade/new-salve',
+  checkSchema({
+    descAdapt: {
+      in: ['body'],
+      errorMessage: 'descrição invalida',
+      notEmpty: true,
+      escape: true,
+      trim: true,
+      isLength: {
+        options: {
+          min: 4,
+          max: 50
+        }
+      }
+    }
+  }),
+  function (req, res) {
+     //verificar se o usuario tem permição para acessar a rota
     const errorResult = validationResult(req);
     if (!errorResult.isEmpty()) {
       let errorValidator = errorResult.array();
-      return adaptabilidadeController.create(req, res, errorValidator);
-    };
+      if(!req.session.strErrorMsg){
+        req.session.strErrorMsg = "";
+      }
+      req.session.strErrorMsg = errorValidator[0].msg;      
+      return res.redirect('/adm/adaptabilidade');
+    }
+    console.log(req.body);
+    adaptabilidadeController.newSave(req, res);
+  });
 
-    adaptabilidadeController.save(req, res);
-});
+adaptabilidadeRouter.get('/adm/adaptabilidade/edit/:idAdapt',
+  checkSchema({
+    idAdapt: {
+      in: ['params'],
+      escape: true,
+      notEmpty: true,
+      trim: true,
+      isNumeric: {
+        errorMessage: "o valor tem que ser numerio"
+      },
+      toInt: true
+    }
+  }),
+  (req, res) => {
+    const errorResult = validationResult(req);
+    if (!errorResult.isEmpty()) {
+      let errorValidator = errorResult.array();
+      console.log(errorValidator);
+      return adaptabilidadeController.index(req, res, errorValidator);
+    }
 
+    adaptabilidadeController.edit(req, res);
+  });
 
+adaptabilidadeRouter.post('/adm/adaptabilidade/edit-salve', 
+  checkSchema({
+    idAdapt: {
+      in: ['body'],
+      escape: true,
+      notEmpty: true,
+      trim: true,
+      isNumeric: {
+        errorMessage: "o valor tem que ser numerio"
+      },
+      toInt: true
+    },
+    descAdapt: {
+      in: ['body'],
+      errorMessage: 'descrição invalida',
+      notEmpty: true,
+      escape: true,
+      trim: true,
+      isLength: {
+        options: {
+          min: 4,
+          max: 50
+        }
+      }
+    }
+  }),
+ function(req, res){
+    const errorResult = validationResult(req);
+    if(!errorResult.isEmpty()){
+      let errorValidator = errorResult.array();
+      return adaptabilidadeController.index(req, res, errorValidator);
+    }
 
-adaptabilidadeRouter.get('/adm/adaptabilidade', (req, res) => {
-  adaptabilidadeController.read(req, res);
-});
+    adaptabilidadeController.editSalve(req, res);
+  }
+)
 
-adaptabilidadeRouter.post('/adm/adaptabilidade/editar/salvar', (req, res) => {
-  adaptabilidadeController.edit(req, res);
-});
-
-adaptabilidadeRouter.get('/adm/adaptabilidade/delete/:id', (req, res) => {
+adaptabilidadeRouter.get('/adm/adaptabilidade/delete/:idAdapt', 
+  checkSchema({
+    idAdapt: {
+      in: ['params'],
+      escape: true,
+      notEmpty: true,
+      trim: true,
+      isNumeric: {
+        errorMessage: "o valor tem que ser numerio"
+      },
+      toInt: true
+    }
+  }),
+  
+  (req, res) => {
   adaptabilidadeController.delete(req, res);
 });
 

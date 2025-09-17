@@ -5,6 +5,20 @@
         }
     </style>
    <table>
+    <% 
+    if(msg.msgError != null)
+    {%>
+        <div class="<%= msg.msgError.class %>">
+            <p><%= msg.msgError.contentMsg %></p>
+        </div>        
+    <%}%>
+     <% 
+    if(msg.msgSucess != null)
+    {%>
+        <div class="<%= msg.msgSucess.class %>">
+            <p><%= msg.msgSucess.contentMsg %></p>
+        </div>        
+    <%}%>
     <thead>
         <tr>
             <th>#</th>
@@ -13,16 +27,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>vive bem apartamento</td>      
-            <td>icone de etidar excluir</td>          
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>vive em casa com quintal</td>      
-            <td>icone de etidar excluir</td>          
-        </tr>
+       <% if(data){
+            data.forEach(item =>{%>
+                <tr>
+                    <td><%= item.id_adaptalidade %></td>
+                    <td><%= item.descricao_adaptalidade %></td>
+                    <td><a href="/adm/adaptabilidade/edit/<%= item.id_adaptalidade %>" >EDITAR</a>
+                    <a href="/adm/adaptabilidade/delete/<%= item.id_adaptalidade %>" >EXCLUIR</a></td>
+                </tr>
+        <% })
+       }%>
     </tbody>
    </table>
 </main>
