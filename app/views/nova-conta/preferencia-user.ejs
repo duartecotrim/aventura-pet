@@ -6,22 +6,33 @@
             <p>opçoes vira do back and</p>
             <form action="/nova-conta/preferencia-salvar" method="post">
                 <p>ESPECIE</p>
-                <% especies.forEach(especie=>{%>
-                    <label><%= especie.nome_especie %></label>
-                    <input onclick="buscarRaca(this)" type="radio" name="especie" value="<%=especie.id_especie%>">
+                    <% especies.forEach(especie=>{%>
+                <label>
+                    <%= especie.nome_especie %>
+                </label>
+                <input onclick="buscarRaca(this)" type="radio" name="especie" value="<%=especie.id_especie%>">
                 <%})%>
-                <br>
-                <p>RAÇAS</p>
-                <div id="racas">
+                    <br>
+                        <p>RAÇAS</p>
+                        <div id="racas">
 
-                </div>
-                <p>COR DA PELAGEM</p>
-                <% cores.forEach(cor=>{%>
-                    <label><%= cor.nome_cor %></label>
-                    <input type="radio" name="cor" value="<%= cor.id_cor %>">
-                <%})%>    
-                     
-                        <input type="submit" value="SEGUINTE">
+                        </div>
+                        <p>COR DA PELAGEM</p>
+                        <% cores.forEach(cor=>{%>
+                            <label>
+                                <%= cor.nome_cor %>
+                            </label>
+                            <input type="radio" name="corpelagem" value="<%= cor.id_cor %>">
+                            <%})%>
+                        <p>COR DOS OLHOS</p>
+                        <% cores.forEach(cor=>{%>
+                            <label>
+                                <%= cor.nome_cor %>
+                            </label>
+                            <input type="radio" name="corolhos" value="<%= cor.id_cor %>">
+                            <%})%>
+
+                                <input type="submit" value="SEGUINTE">
             </form>
 </main>
 
